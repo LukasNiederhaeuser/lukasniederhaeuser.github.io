@@ -1,86 +1,278 @@
 <!DOCTYPE html>
-    <html lang="en">
+<html lang="de">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-        <!--==================== UNICONS ====================-->
-        
-        
-        <!--==================== SWIPER CSS ====================-->
-        <link rel="stylesheet" href="">
-        
-        <!--==================== CSS ====================-->
-        <link rel="stylesheet" href="">
-
-        <title>Responsive Portfolio Website</title>
+        <meta name="description" content="Portfolio von Lukas Niederhaeuser – Creative Developer & Produktgestalter">
+        <link rel="stylesheet" href="assets/css/styles.css">
+        <title>Lukas Niederhaeuser · Portfolio</title>
     </head>
     <body>
+        <div class="noise" aria-hidden="true"></div>
+
         <!--==================== HEADER ====================-->
         <header class="header" id="header">
-            
+            <nav class="nav container" aria-label="Hauptnavigation">
+                <a class="nav__logo" href="#home">Lukas Niederhaeuser</a>
+
+                <button class="nav__toggle" id="nav-toggle" aria-label="Navigation öffnen">
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <div class="nav__menu" id="nav-menu" role="dialog" aria-modal="true" aria-label="Navigation">
+                    <button class="nav__close" id="nav-close" aria-label="Navigation schließen">×</button>
+                    <ul class="nav__list">
+                        <li><a class="nav__link" href="#home">Start</a></li>
+                        <li><a class="nav__link" href="#about">Profil</a></li>
+                        <li><a class="nav__link" href="#skills">Expertise</a></li>
+                        <li><a class="nav__link" href="#portfolio">Projekte</a></li>
+                        <li><a class="nav__link" href="#contact">Kontakt</a></li>
+                    </ul>
+                    <a class="btn btn--ghost nav__cta" href="mailto:hello@lukasniederhaeuser.com">Projekt anfragen</a>
+                </div>
+
+                <button class="theme-toggle" id="theme-toggle" aria-label="Theme wechseln">
+                    <span class="theme-toggle__icon" aria-hidden="true"></span>
+                </button>
+            </nav>
         </header>
+
+        <div class="nav__overlay" id="nav-overlay" aria-hidden="true"></div>
 
         <!--==================== MAIN ====================-->
         <main class="main">
             <!--==================== HOME ====================-->
-            <section class="home section" id="home">
-                
+            <section class="section hero" id="home">
+                <div class="container grid hero__grid">
+                    <div class="hero__copy reveal">
+                        <p class="eyebrow">Portfolio · 2025</p>
+                        <h1>Ich entwerfe digitale Produkte, die mutig denken und sauber umgesetzt sind.</h1>
+                        <p>
+                            Als Creative Developer kombiniere ich Designempfinden mit technischer Präzision. Ich helfe Startups
+                            und Teams dabei, Ideen zu Produkten zu formen und bestehende Erlebnisse neu zu denken.
+                        </p>
+                        <div class="hero__cta">
+                            <a class="btn btn--primary" href="#portfolio">Projekte ansehen</a>
+                            <a class="btn btn--ghost" href="Text%20Portfolio%20Alexa.txt" download>Profil als PDF</a>
+                        </div>
+                        <div class="hero__stats">
+                            <div>
+                                <span>08+</span>
+                                <p>realisierte Produkte</p>
+                            </div>
+                            <div>
+                                <span>4</span>
+                                <p>Jahre Erfahrung</p>
+                            </div>
+                            <div>
+                                <span>3</span>
+                                <p>kontinente betreut</p>
+                            </div>
+                        </div>
+                        <div class="hero__social">
+                            <a href="https://github.com/lukasniederhaeuser" target="_blank" rel="noreferrer">GitHub</a>
+                            <a href="https://www.linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a>
+                            <a href="mailto:hello@lukasniederhaeuser.com">E-Mail</a>
+                        </div>
+                    </div>
+
+                    <div class="hero__media reveal">
+                        <div class="hero__orbit">
+                            <div class="hero__dot"></div>
+                            <div class="hero__dot"></div>
+                            <div class="hero__dot"></div>
+                        </div>
+                        <div class="hero__card">
+                            <p>Aktuell verfügbar für remote Projekte.</p>
+                            <span>Frontend · Prototyping · UX Mentoring</span>
+                        </div>
+                        <ul class="hero__chips">
+                            <li>TypeScript</li>
+                            <li>Next.js</li>
+                            <li>Design Systems</li>
+                            <li>WebGL Experimente</li>
+                        </ul>
+                    </div>
+                </div>
             </section>
 
             <!--==================== ABOUT ====================-->
-            <section class="about section" id="about">
-                
+            <section class="section" id="about">
+                <div class="container grid about__grid reveal">
+                    <div>
+                        <p class="eyebrow">Profil</p>
+                        <h2 class="section__title">Strategisches Denken trifft Hands-on Delivery</h2>
+                        <p>
+                            Ich begleite Teams vom ersten Scribble bis zum Launch. Mein Fokus liegt auf klaren Narrativen, sauberer
+                            Implementierung und messbaren Ergebnissen. Ich arbeite iterativ, neugierig und immer mit einem Ohr bei den
+                            Nutzerinnen und Nutzern.
+                        </p>
+                    </div>
+                    <ul class="about__highlights">
+                        <li>
+                            <span>Discovery Sprints</span>
+                            <p>Workshops, Produktvision, KPI Ableitung</p>
+                        </li>
+                        <li>
+                            <span>Experience Engineering</span>
+                            <p>Interaktive Prototypen, Design Systeme, Animation</p>
+                        </li>
+                        <li>
+                            <span>Delivery</span>
+                            <p>Clean Code, Testing, Knowledge Transfer</p>
+                        </li>
+                    </ul>
+                </div>
             </section>
 
             <!--==================== SKILLS ====================-->
-            <section class="skills section" id="skills">
-
-            </section>
-
-            <!--==================== QUALIFICATION ====================-->
-            <section class="qualification section">
-
-            </section>
-
-            <!--==================== SERVICES ====================-->
-            <section class="services section" id="services">
-                
+            <section class="section" id="skills">
+                <div class="container reveal">
+                    <div class="section__header">
+                        <p class="eyebrow">Expertise</p>
+                        <h2 class="section__title">Toolset für ambitionierte Produkte</h2>
+                    </div>
+                    <div class="skills__grid">
+                        <article class="skill-card">
+                            <h3>Front-of-Stack</h3>
+                            <p>React, Next.js, Astro, Node, Vite, Tailwind, Framer Motion</p>
+                        </article>
+                        <article class="skill-card">
+                            <h3>Design</h3>
+                            <p>Figma, FigJam, Protopie, Motion, Creative Coding</p>
+                        </article>
+                        <article class="skill-card">
+                            <h3>Operations</h3>
+                            <p>Storybook, Testing Library, Playwright, CI/CD, GitHub Actions</p>
+                        </article>
+                        <article class="skill-card">
+                            <h3>Advisory</h3>
+                            <p>Team Enablement, Audits, Mentoring, Product Strategy</p>
+                        </article>
+                    </div>
+                </div>
             </section>
 
             <!--==================== PORTFOLIO ====================-->
-            <section class="portfolio section" id="portfolio">
-                
+            <section class="section" id="portfolio">
+                <div class="container reveal">
+                    <div class="section__header">
+                        <p class="eyebrow">Ausgewählte Arbeiten</p>
+                        <h2 class="section__title">Fallstudien & Experimente</h2>
+                    </div>
+                    <div class="projects__grid">
+                        <article class="project-card">
+                            <div class="project-card__tag">Fintech · 2024</div>
+                            <h3>Capital Flow Dashboard</h3>
+                            <p>Realtime Analytics UI für ein Growth-Team. Fokus: komplexe Daten interaktiv und zugänglich machen.</p>
+                            <ul>
+                                <li>Next.js</li>
+                                <li>WebSockets</li>
+                                <li>Motion</li>
+                            </ul>
+                            <a class="project-card__link" href="https://github.com/lukasniederhaeuser" target="_blank" rel="noreferrer">Repository öffnen →</a>
+                        </article>
+                        <article class="project-card">
+                            <div class="project-card__tag">Mobility · 2023</div>
+                            <h3>Urban Trails Companion</h3>
+                            <p>Mobile-first App zur Navigation urbaner Micro-Mobility. Aufbau eines flexiblen Design Systems.</p>
+                            <ul>
+                                <li>React Native</li>
+                                <li>Design Tokens</li>
+                                <li>CI/CD</li>
+                            </ul>
+                            <a class="project-card__link" href="https://github.com/lukasniederhaeuser" target="_blank" rel="noreferrer">Case lesen →</a>
+                        </article>
+                        <article class="project-card">
+                            <div class="project-card__tag">Culture · 2022</div>
+                            <h3>Analog Echo Lab</h3>
+                            <p>Installation mit generativen Visuals und WebGL. Experiment über Klang, Raum und digitale Interfaces.</p>
+                            <ul>
+                                <li>Three.js</li>
+                                <li>Shaders</li>
+                                <li>Touch Interaktion</li>
+                            </ul>
+                            <a class="project-card__link" href="https://lukasniederhaeuser.github.io" target="_blank" rel="noreferrer">Live erleben →</a>
+                        </article>
+                    </div>
+                </div>
             </section>
 
-            <!--==================== PROJECT IN MIND ====================-->
-            <section class="project section">
-
+            <!--==================== QUALIFICATION ====================-->
+            <section class="section" id="journey">
+                <div class="container reveal">
+                    <div class="section__header">
+                        <p class="eyebrow">Journey</p>
+                        <h2 class="section__title">Stationen & Wirkung</h2>
+                    </div>
+                    <div class="timeline">
+                        <article>
+                            <span>2024 – heute</span>
+                            <h3>Freelance Creative Developer</h3>
+                            <p>Produktteams bei Launches begleitet, Growth-Strecken optimiert, Mentoring für interne Crews.</p>
+                        </article>
+                        <article>
+                            <span>2022 – 2024</span>
+                            <h3>Lead Frontend · Studio Nord</h3>
+                            <p>Aufbau eines multi-brand Design Systems, Einführung automatisierter Tests und Storybook-first Workflows.</p>
+                        </article>
+                        <article>
+                            <span>2019 – 2022</span>
+                            <h3>Product Engineer · Collective</h3>
+                            <p>From Zero-to-One Produkte ausgeliefert, Research betrieben und cross-funktionale Teams orchestriert.</p>
+                        </article>
+                    </div>
+                </div>
             </section>
 
-            <!--==================== TESTIMONIAL ====================-->
-            <section class="testimonial section">
-                
-            </section>
-
-            <!--==================== CONTACT ME ====================-->
-            <section class="contact section" id="contact">
-
+            <!--==================== CONTACT ====================-->
+            <section class="section" id="contact">
+                <div class="container grid contact__grid reveal">
+                    <div>
+                        <p class="eyebrow">Kontakt</p>
+                        <h2 class="section__title">Lass uns was Neues bauen</h2>
+                        <p>
+                            Kurze Nachricht reicht: Was ist die Herausforderung, welches Ziel verfolgt ihr und wie sieht der Zeithorizont aus?
+                            Ich melde mich innerhalb von 24 Stunden.
+                        </p>
+                        <ul class="contact__details">
+                            <li><span>E-Mail</span><a href="mailto:hello@lukasniederhaeuser.com">hello@lukasniederhaeuser.com</a></li>
+                            <li><span>Standort</span><p>Zürich · Remote Europa</p></li>
+                        </ul>
+                    </div>
+                    <form class="contact__form" id="contact-form">
+                        <label>
+                            Name
+                            <input type="text" name="name" placeholder="Vor- und Nachname" required>
+                        </label>
+                        <label>
+                            E-Mail
+                            <input type="email" name="email" placeholder="team@studio.com" required>
+                        </label>
+                        <label>
+                            Projektidee
+                            <textarea name="message" rows="4" placeholder="Kurze Beschreibung deiner Idee" required></textarea>
+                        </label>
+                        <button class="btn btn--primary" type="submit">Nachricht senden</button>
+                        <p class="form__status" id="form-status" role="status" aria-live="polite"></p>
+                    </form>
+                </div>
             </section>
         </main>
 
         <!--==================== FOOTER ====================-->
         <footer class="footer">
-         
+            <div class="container footer__inner">
+                <p>© <span id="year"></span> Lukas Niederhaeuser</p>
+                <a href="#home">Back to top</a>
+            </div>
         </footer>
-        
-        <!--==================== SCROLL TOP ====================-->
-        
 
-        <!--==================== SWIPER JS ====================-->
-        <script src=""></script>
+        <!--==================== SCROLL TOP ====================-->
+        <button class="scroll-top" id="scroll-top" aria-label="Nach oben scrollen">↑</button>
 
         <!--==================== MAIN JS ====================-->
-        <script src=""></script>
+        <script src="assets/js/main.js" defer></script>
     </body>
 </html>
