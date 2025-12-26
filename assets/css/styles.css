@@ -5,9 +5,7 @@
 :root {
   --header-height: 4.5rem;
   --page-bg: #fdfcfb;
-  --page-gradient: radial-gradient(circle at 10% 20%, rgba(255, 183, 71, 0.25), transparent 40%),
-    radial-gradient(circle at 80% 0%, rgba(255, 107, 61, 0.2), transparent 45%),
-    #ffffff;
+  --page-gradient: #ffffff;
   --layer-color: rgba(255, 255, 255, 0.85);
   --card-bg: #ffffff;
   --border-color: rgba(15, 23, 42, 0.12);
@@ -48,12 +46,7 @@ body.no-scroll {
 }
 
 .noise {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"%3E%3Cfilter id="n" x="0" y="0" width="1" height="1"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="4" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="200" height="200" filter="url(%23n)" opacity="0.08"/%3E%3C/svg%3E');
-  opacity: 0.25;
-  z-index: 0;
+  display: none;
 }
 
 img {
@@ -287,6 +280,8 @@ a {
   border: 1px solid var(--border-color);
   background: var(--card-bg);
   box-shadow: var(--shadow-soft);
+}
+
 .hero__image {
   width: 100%;
   border-radius: 1.5rem;
