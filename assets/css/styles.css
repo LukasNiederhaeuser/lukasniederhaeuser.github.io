@@ -22,20 +22,6 @@
   --transition-base: 0.3s ease;
 }
 
-[data-theme='dark'] {
-  --page-bg: #04060f;
-  --page-gradient: radial-gradient(circle at top, rgba(25, 113, 255, 0.25), transparent 55%),
-    radial-gradient(circle at 20% 20%, rgba(255, 105, 39, 0.2), transparent 40%),
-    #04060f;
-  --layer-color: rgba(8, 11, 23, 0.82);
-  --card-bg: rgba(11, 14, 28, 0.92);
-  --border-color: rgba(255, 255, 255, 0.08);
-  --text-color: #e3e7ff;
-  --muted-color: #9aa3c7;
-  --overlay-color: rgba(4, 6, 15, 0.6);
-  --shadow-soft: 0 25px 80px rgba(4, 6, 15, 0.5);
-}
-
 /*==================== BASE ====================*/
 * {
   box-sizing: border-box;
@@ -211,8 +197,7 @@ a {
 }
 
 .nav__toggle,
-.nav__close,
-.theme-toggle {
+.nav__close {
   background: transparent;
   border: none;
   color: var(--text-color);
@@ -249,22 +234,6 @@ a {
 
 .nav__cta {
   align-self: flex-start;
-}
-
-.theme-toggle {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  border: 1px solid var(--border-color);
-  position: relative;
-}
-
-.theme-toggle__icon {
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  border: 3px solid var(--text-color);
-  display: inline-block;
 }
 
 /*==================== HERO ====================*/
@@ -318,37 +287,18 @@ a {
   border: 1px solid var(--border-color);
   background: var(--card-bg);
   box-shadow: var(--shadow-soft);
+.hero__image {
+  width: 100%;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  margin-bottom: 1.5rem;
 }
 
-.hero__orbit {
-  width: 240px;
-  height: 240px;
-  border-radius: 50%;
-  border: 1px dashed var(--border-color);
-  margin: 0 auto 2rem;
-  position: relative;
-  animation: spin 14s linear infinite;
-}
-
-.hero__dot {
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  background: var(--accent-color);
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.hero__dot:nth-child(2) {
-  top: auto;
-  bottom: 0;
-}
-
-.hero__dot:nth-child(3) {
-  top: 50%;
-  left: 0;
+.hero__image img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 .hero__card {
@@ -653,11 +603,5 @@ a {
 
   .contact__form {
     padding: 1.5rem;
-  }
-}
-
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
   }
 }

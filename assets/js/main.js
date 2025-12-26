@@ -61,33 +61,6 @@ scrollTopButton?.addEventListener('click', () => {
 	window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
-const root = document.documentElement;
-const THEME_KEY = 'ln-theme';
-const applyTheme = (theme) => {
-	if (theme === 'dark') {
-		root.setAttribute('data-theme', 'dark');
-	} else {
-		root.removeAttribute('data-theme');
-	}
-};
-
-const storedTheme = localStorage.getItem(THEME_KEY);
-if (storedTheme === 'dark') {
-	applyTheme('dark');
-}
-
-const themeToggle = document.getElementById('theme-toggle');
-themeToggle?.addEventListener('click', () => {
-	const isDark = root.getAttribute('data-theme') === 'dark';
-	const nextTheme = isDark ? 'light' : 'dark';
-	applyTheme(nextTheme);
-	if (nextTheme === 'dark') {
-		localStorage.setItem(THEME_KEY, 'dark');
-	} else {
-		localStorage.removeItem(THEME_KEY);
-	}
-});
-
 const yearEl = document.getElementById('year');
 if (yearEl) {
 	yearEl.textContent = String(new Date().getFullYear());
