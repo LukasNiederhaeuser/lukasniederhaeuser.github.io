@@ -33,6 +33,11 @@ html {
 
 body {
   min-height: 100vh;
+.nav__logo {
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  margin-left: 1cm;
+}
   font-family: var(--font-base);
   color: var(--text-color);
   background: var(--page-gradient);
@@ -55,6 +60,8 @@ img {
 }
 
 ul {
+  justify-content: center;
+  align-items: center;
   list-style: none;
 }
 
@@ -66,12 +73,14 @@ a {
 .section {
   padding: 5rem 0;
   position: relative;
+    margin: 0 auto;
 }
 
 .container {
   width: min(1200px, 90%);
   margin: 0 auto;
 }
+    justify-content: center;
 
 .grid {
   display: grid;
@@ -286,7 +295,6 @@ a {
   width: 100%;
   border-radius: 1.5rem;
   overflow: hidden;
-  border: 1px solid var(--border-color);
   margin-bottom: 1.5rem;
   background: #ffffff;
 }
