@@ -575,6 +575,7 @@ a {
     justify-content: center;
     margin-left: auto;
     margin-right: auto;
+    width: auto;
   }
 
   .nav__toggle,
@@ -588,7 +589,7 @@ a {
     gap: 1.25rem;
     font-size: 0.95rem;
     justify-content: center;
-    width: 100%;
+    width: auto;
   }
 }
 
