@@ -488,7 +488,15 @@ a {
   margin-top: 1.5rem;
   padding-top: 1.5rem;
   display: grid;
+  grid-template-columns: 1fr;
   gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .project-detail__body {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
 }
 
 .project-detail__text h4,
