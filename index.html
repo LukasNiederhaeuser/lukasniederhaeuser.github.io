@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Portfolio von Lukas Niederhaeuser – Data Analyst & Scientist">
-        <link rel="stylesheet" href="assets/css/styles.css?v=2">
+        <link rel="stylesheet" href="assets/css/styles.css?v=4">
         <title>Lukas Niederhaeuser · Portfolio</title>
     </head>
     <body>
@@ -137,7 +137,7 @@
                         <p class="eyebrow">Persönliche Projekte</p>
                         <h2 class="section__title">Experimente & Projekte</h2>
                     </div>
-                    <div class="projects__grid projects__grid--single">
+                    <div class="projects__grid">
                         <article class="project-card project-card--expandable">
                             <div class="project-card__summary">
                                 <div class="project-card__tag">GCP · MLOps · 2026</div>
@@ -251,6 +251,111 @@
                                 </div>
                             </div>
                         </article>
+
+                        <article class="project-card project-card--expandable">
+                            <div class="project-card__summary">
+                                <div class="project-card__tag">GCP · Cloud Run · 2026</div>
+                                <h3>OpenAI Chatbot – Containerisiertes Microservice-Deployment auf GCP</h3>
+                                <p>KI-Chatbot mit FastAPI-Backend (LangChain + GPT-3.5-turbo) und Chainlit-Frontend als zwei unabhängige Docker-Container auf GCP Cloud Run – Infrastruktur vollständig als Terraform-IaC mit Secret Manager und Cloud Build CI/CD.</p>
+                                <ul>
+                                    <li>Python</li>
+                                    <li>FastAPI</li>
+                                    <li>Chainlit</li>
+                                    <li>LangChain</li>
+                                    <li>OpenAI API</li>
+                                    <li>GCP Cloud Run</li>
+                                    <li>Terraform</li>
+                                </ul>
+                                <div class="project-card__footer">
+                                    <button class="project-card__toggle" aria-expanded="false" aria-controls="detail-chatbot">
+                                        Details anzeigen <span class="project-card__chevron">▼</span>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="project-card__detail" id="detail-chatbot">
+                                <div class="project-detail__body">
+                                    <div class="project-detail__text">
+                                        <h4>Projektzusammenfassung</h4>
+                                        <p>Ein containerisierter KI-Chatbot mit klarer Trennung von Frontend und Backend als zwei eigenständige Microservices auf Google Cloud Platform. Das FastAPI-Backend übernimmt die gesamte KI-Logik: Eingehende Nutzerprompts werden per LangChain in eine strukturierte Message-Chain überführt – bestehend aus System-Message und Human-Message – und an das GPT-3.5-turbo-Modell von OpenAI übermittelt. Der OpenAI-API-Key wird sicher über den GCP Secret Manager verwaltet und zur Laufzeit als Environment-Variable in den Container injiziert.</p>
+                                        <p>Das Chainlit-Frontend stellt eine moderne Chat-Oberfläche bereit, die asynchron per HTTP mit dem Backend kommuniziert. Beide Services laufen als unabhängige Cloud-Run-Instanzen – auto-skalierend und serverlos. Docker-Images werden mit Google Cloud Build gebaut und in der Artifact Registry gespeichert, bevor sie über Cloud Run deployed werden.</p>
+                                        <p>Die gesamte Infrastruktur – Cloud-Run-Services, IAM-Bindings, Secret-Referenzen und Artifact-Registry-Repositories – ist vollständig als Terraform-Infrastructure-as-Code definiert. Umgebungsspezifische Konfigurationen für INT, ACC und PROD werden über separate tfvars-Dateien verwaltet.</p>
+                                        <h4>Technologien &amp; Konzepte</h4>
+                                        <ul class="project-detail__tags">
+                                            <li>FastAPI</li>
+                                            <li>Chainlit</li>
+                                            <li>LangChain</li>
+                                            <li>OpenAI API (GPT-3.5-turbo)</li>
+                                            <li>GCP Cloud Run</li>
+                                            <li>Docker</li>
+                                            <li>Artifact Registry</li>
+                                            <li>Cloud Build</li>
+                                            <li>Secret Manager</li>
+                                            <li>Terraform</li>
+                                            <li>Python</li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="project-detail__diagram">
+                                        <h4>Architektur – Request Flow</h4>
+                                        <div class="pipeline-diagram-wrapper">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 790 170" role="img" aria-label="OpenAI Chatbot Architektur Diagramm">
+                                                <defs>
+                                                    <marker id="arr-chat" markerWidth="8" markerHeight="8" refX="8" refY="3" orient="auto">
+                                                        <path d="M0,0 L0,6 L8,3 z" fill="#ff6b3d"/>
+                                                    </marker>
+                                                </defs>
+
+                                                <!-- Background container -->
+                                                <rect x="5" y="5" width="780" height="160" rx="16" fill="#fafbff" stroke="#c7d2fe" stroke-width="1.5" stroke-dasharray="5 3"/>
+                                                <text x="30" y="27" font-size="9.5" font-family="IBM Plex Mono, monospace" fill="#6366f1" letter-spacing="1.5">GCP CLOUD RUN · MICROSERVICE ARCHITEKTUR</text>
+
+                                                <!-- Arrows -->
+                                                <line x1="123" y1="78" x2="174" y2="78" stroke="#ff6b3d" stroke-width="1.5" marker-end="url(#arr-chat)"/>
+                                                <line x1="284" y1="78" x2="335" y2="78" stroke="#ff6b3d" stroke-width="1.5" marker-end="url(#arr-chat)"/>
+                                                <line x1="445" y1="78" x2="496" y2="78" stroke="#ff6b3d" stroke-width="1.5" marker-end="url(#arr-chat)"/>
+                                                <line x1="606" y1="78" x2="657" y2="78" stroke="#ff6b3d" stroke-width="1.5" marker-end="url(#arr-chat)"/>
+
+                                                <!-- Node 1: User -->
+                                                <rect x="15" y="46" width="105" height="64" rx="10" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1.5"/>
+                                                <text x="67" y="75" text-anchor="middle" font-size="10.5" font-weight="600" fill="#1e1b4b" font-family="Space Grotesk, sans-serif">User</text>
+                                                <text x="67" y="92" text-anchor="middle" font-size="8" fill="#64748b" font-family="IBM Plex Mono, monospace">Browser</text>
+
+                                                <!-- Node 2: Chainlit Frontend -->
+                                                <rect x="176" y="46" width="105" height="64" rx="10" fill="#eef2ff" stroke="#a5b4fc" stroke-width="1.5"/>
+                                                <text x="228" y="75" text-anchor="middle" font-size="10.5" font-weight="600" fill="#1e1b4b" font-family="Space Grotesk, sans-serif">Chainlit</text>
+                                                <text x="228" y="92" text-anchor="middle" font-size="8" fill="#6366f1" font-family="IBM Plex Mono, monospace">Cloud Run · UI</text>
+
+                                                <!-- Node 3: FastAPI Backend -->
+                                                <rect x="337" y="46" width="105" height="64" rx="10" fill="#fff4f0" stroke="#fdba74" stroke-width="1.5"/>
+                                                <text x="389" y="75" text-anchor="middle" font-size="10.5" font-weight="600" fill="#1e1b4b" font-family="Space Grotesk, sans-serif">FastAPI</text>
+                                                <text x="389" y="92" text-anchor="middle" font-size="8" fill="#ea580c" font-family="IBM Plex Mono, monospace">Cloud Run · API</text>
+
+                                                <!-- Node 4: LangChain -->
+                                                <rect x="498" y="46" width="105" height="64" rx="10" fill="#fff4f0" stroke="#fdba74" stroke-width="1.5"/>
+                                                <text x="550" y="75" text-anchor="middle" font-size="10.5" font-weight="600" fill="#1e1b4b" font-family="Space Grotesk, sans-serif">LangChain</text>
+                                                <text x="550" y="92" text-anchor="middle" font-size="8" fill="#ea580c" font-family="IBM Plex Mono, monospace">Orchestration</text>
+
+                                                <!-- Node 5: OpenAI API -->
+                                                <rect x="659" y="46" width="105" height="64" rx="10" fill="#f0fdf4" stroke="#86efac" stroke-width="1.5"/>
+                                                <text x="711" y="75" text-anchor="middle" font-size="10.5" font-weight="600" fill="#1e1b4b" font-family="Space Grotesk, sans-serif">OpenAI API</text>
+                                                <text x="711" y="92" text-anchor="middle" font-size="8" fill="#16a34a" font-family="IBM Plex Mono, monospace">GPT-3.5-turbo</text>
+
+                                                <!-- Legend -->
+                                                <rect x="20" y="126" width="10" height="10" rx="2" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1"/>
+                                                <text x="36" y="135" font-size="8" fill="#5a6377" font-family="IBM Plex Mono, monospace">Client</text>
+                                                <rect x="100" y="126" width="10" height="10" rx="2" fill="#eef2ff" stroke="#a5b4fc" stroke-width="1"/>
+                                                <text x="116" y="135" font-size="8" fill="#5a6377" font-family="IBM Plex Mono, monospace">Interface Layer</text>
+                                                <rect x="240" y="126" width="10" height="10" rx="2" fill="#fff4f0" stroke="#fdba74" stroke-width="1"/>
+                                                <text x="256" y="135" font-size="8" fill="#5a6377" font-family="IBM Plex Mono, monospace">API Layer</text>
+                                                <rect x="360" y="126" width="10" height="10" rx="2" fill="#f0fdf4" stroke="#86efac" stroke-width="1"/>
+                                                <text x="376" y="135" font-size="8" fill="#5a6377" font-family="IBM Plex Mono, monospace">AI Layer</text>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
                     </div>
                 </div>
             </section>
@@ -319,6 +424,6 @@
         <button class="scroll-top" id="scroll-top" aria-label="Nach oben scrollen">↑</button>
 
         <!--==================== MAIN JS ====================-->
-        <script src="assets/js/main.js?v=2" defer></script>
+        <script src="assets/js/main.js?v=3" defer></script>
     </body>
 </html>
