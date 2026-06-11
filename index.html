@@ -137,39 +137,119 @@
                         <p class="eyebrow">Persönliche Projekte</p>
                         <h2 class="section__title">Experimente & Projekte</h2>
                     </div>
-                    <div class="projects__grid">
-                        <article class="project-card">
-                            <div class="project-card__tag">Fintech · 2024</div>
-                            <h3>Capital Flow Intelligence</h3>
-                            <p>Stream-Processing Pipeline mit Forecasting-Modellen, die Cashflow-Anomalien frühzeitig kennzeichnet.</p>
-                            <ul>
-                                <li>Python</li>
-                                <li>ARIMA</li>
-                                <li>Looker</li>
-                            </ul>
-                            <a class="project-card__link" href="https://github.com/lukasniederhaeuser" target="_blank" rel="noreferrer">Repository öffnen →</a>
-                        </article>
-                        <article class="project-card">
-                            <div class="project-card__tag">Mobility · 2023</div>
-                            <h3>Urban Trails Demand Model</h3>
-                            <p>Geostatistische Analyse plus XGBoost-Modell zur Vorhersage von Auslastung und Wartungsfenstern.</p>
-                            <ul>
-                                <li>SQL</li>
-                                <li>XGBoost</li>
-                                <li>Kepler.gl</li>
-                            </ul>
-                            <a class="project-card__link" href="https://github.com/lukasniederhaeuser" target="_blank" rel="noreferrer">Case lesen →</a>
-                        </article>
-                        <article class="project-card">
-                            <div class="project-card__tag">Climate · 2022</div>
-                            <h3>Analog Echo Lab</h3>
-                            <p>Sensor-Datenfusion zur Analyse mikroklimatischer Muster, kombiniert mit narrativem Data Storytelling.</p>
-                            <ul>
-                                <li>R</li>
-                                <li>Shiny</li>
-                                <li>WebGL</li>
-                            </ul>
-                            <a class="project-card__link" href="https://lukasniederhaeuser.github.io" target="_blank" rel="noreferrer">Live erleben →</a>
+                    <div class="projects__grid projects__grid--single">
+                        <article class="project-card project-card--expandable">
+                            <div class="project-card__summary">
+                                <div class="project-card__tag">GCP · MLOps · 2026</div>
+                                <h3>End-to-End ML Pipeline mit Vertex AI</h3>
+                                <p>Vollständige MLOps-Pipeline auf Vertex AI: Random-Forest-Klassifikation zur Notenvorhersage (A–F), orchestriert mit Kubeflow Pipelines (KFP v2) – von der Datenbeschaffung bis zum bedingten Modell-Deployment mit FastAPI-Frontend.</p>
+                                <ul>
+                                    <li>Python</li>
+                                    <li>Vertex AI</li>
+                                    <li>Kubeflow Pipelines (KFP)</li>
+                                    <li>FastAPI</li>
+                                    <li>GCP</li>
+                                </ul>
+                                <div class="project-card__footer">
+                                    <button class="project-card__toggle" aria-expanded="false" aria-controls="detail-gcp">
+                                        Details anzeigen <span class="project-card__chevron">▼</span>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="project-card__detail" id="detail-gcp">
+                                <div class="project-detail__body">
+                                    <div class="project-detail__text">
+                                        <h4>Projektzusammenfassung</h4>
+                                        <p>Im Rahmen des GCP Professional Machine Learning Engineer-Kurses wurde eine vollständige MLOps-Infrastruktur auf Google Cloud Platform aufgebaut. Das Herzstück ist eine automatisierte Vertex AI Pipeline auf Basis von Kubeflow Pipelines (KFP v2), die den gesamten ML-Lebenszyklus reproduzierbar und skalierbar orchestriert. Der Use Case: Klassifikation von Schülerleistungen in Notenstufen A bis F mittels Random Forest.</p>
+                                        <p>Die Pipeline besteht aus sechs eigenständigen KFP-Komponenten, die als containerisierte Python-Funktionen definiert sind. Rohdaten werden als CSV aus Google Cloud Storage geladen, bereinigt, gesplittet und als Parquet gespeichert. Das Modelltraining wird direkt als KFP-Komponente ausgeführt und in Vertex AI Experiments geloggt. Nach der Evaluation – Accuracy, F1 und Confusion Matrix – wird das Modell per KFP-Condition nur dann im Vertex AI Model Registry registriert und auf einem Endpoint deployt, wenn definierte Qualitätsschwellen erreicht werden.</p>
+                                        <p>Vorhersagen sind über ein FastAPI-Backend mit HTML-Frontend abrufbar. Die gesamte Orchestrierung läuft serverlos auf Vertex AI Pipelines; Artefakte, Metriken und Modell-Lineage werden automatisch in Vertex AI Experiments und ML Metadata gespeichert.</p>
+                                        <h4>Technologien &amp; Konzepte</h4>
+                                        <ul class="project-detail__tags">
+                                            <li>Vertex AI Pipelines</li>
+                                            <li>Kubeflow Pipelines (KFP) v2</li>
+                                            <li>Vertex AI Model Registry</li>
+                                            <li>Vertex AI Endpoints</li>
+                                            <li>Vertex AI Experiments</li>
+                                            <li>Google Cloud Storage</li>
+                                            <li>FastAPI</li>
+                                            <li>Python</li>
+                                            <li>Docker</li>
+                                            <li>Artifact Registry</li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="project-detail__diagram">
+                                        <h4>Vertex AI KFP Pipeline – Architektur</h4>
+                                        <div class="pipeline-diagram-wrapper">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 790 170" role="img" aria-label="Vertex AI KFP Pipeline Diagramm">
+                                                <defs>
+                                                    <marker id="arr" markerWidth="8" markerHeight="8" refX="8" refY="3" orient="auto">
+                                                        <path d="M0,0 L0,6 L8,3 z" fill="#ff6b3d"/>
+                                                    </marker>
+                                                    <marker id="arr-cond" markerWidth="8" markerHeight="8" refX="8" refY="3" orient="auto">
+                                                        <path d="M0,0 L0,6 L8,3 z" fill="#ffb347"/>
+                                                    </marker>
+                                                </defs>
+
+                                                <!-- Background container -->
+                                                <rect x="5" y="5" width="780" height="160" rx="16" fill="#fafbff" stroke="#c7d2fe" stroke-width="1.5" stroke-dasharray="5 3"/>
+                                                <text x="30" y="27" font-size="9.5" font-family="IBM Plex Mono, monospace" fill="#6366f1" letter-spacing="1.5">VERTEX AI PIPELINES · KFP v2</text>
+
+                                                <!-- Arrows -->
+                                                <line x1="120" y1="78" x2="148" y2="78" stroke="#ff6b3d" stroke-width="1.5" marker-end="url(#arr)"/>
+                                                <line x1="250" y1="78" x2="278" y2="78" stroke="#ff6b3d" stroke-width="1.5" marker-end="url(#arr)"/>
+                                                <line x1="380" y1="78" x2="408" y2="78" stroke="#ff6b3d" stroke-width="1.5" marker-end="url(#arr)"/>
+                                                <line x1="510" y1="78" x2="538" y2="78" stroke="#ffb347" stroke-width="1.5" stroke-dasharray="4 2" marker-end="url(#arr-cond)"/>
+                                                <line x1="640" y1="78" x2="668" y2="78" stroke="#ff6b3d" stroke-width="1.5" marker-end="url(#arr)"/>
+
+                                                <!-- Conditional label -->
+                                                <text x="524" y="71" text-anchor="middle" font-size="7.5" fill="#ffb347" font-family="IBM Plex Mono, monospace" font-weight="600">if OK</text>
+
+                                                <!-- Node 1: Get Data -->
+                                                <rect x="20" y="46" width="100" height="64" rx="10" fill="#eef2ff" stroke="#a5b4fc" stroke-width="1.5"/>
+                                                <text x="70" y="75" text-anchor="middle" font-size="10.5" font-weight="600" fill="#1e1b4b" font-family="Space Grotesk, sans-serif">Get Data</text>
+                                                <text x="70" y="92" text-anchor="middle" font-size="8" fill="#6366f1" font-family="IBM Plex Mono, monospace">GCS · CSV</text>
+
+                                                <!-- Node 2: Process Data -->
+                                                <rect x="150" y="46" width="100" height="64" rx="10" fill="#eef2ff" stroke="#a5b4fc" stroke-width="1.5"/>
+                                                <text x="200" y="75" text-anchor="middle" font-size="10.5" font-weight="600" fill="#1e1b4b" font-family="Space Grotesk, sans-serif">Process Data</text>
+                                                <text x="200" y="92" text-anchor="middle" font-size="8" fill="#6366f1" font-family="IBM Plex Mono, monospace">KFP Component</text>
+
+                                                <!-- Node 3: Train Model -->
+                                                <rect x="280" y="46" width="100" height="64" rx="10" fill="#fff4f0" stroke="#fdba74" stroke-width="1.5"/>
+                                                <text x="330" y="75" text-anchor="middle" font-size="10.5" font-weight="600" fill="#1e1b4b" font-family="Space Grotesk, sans-serif">Train Model</text>
+                                                <text x="330" y="92" text-anchor="middle" font-size="8" fill="#ea580c" font-family="IBM Plex Mono, monospace">RandomForest</text>
+
+                                                <!-- Node 4: Evaluate Model -->
+                                                <rect x="410" y="46" width="100" height="64" rx="10" fill="#fff4f0" stroke="#fdba74" stroke-width="1.5"/>
+                                                <text x="460" y="75" text-anchor="middle" font-size="10.5" font-weight="600" fill="#1e1b4b" font-family="Space Grotesk, sans-serif">Evaluate</text>
+                                                <text x="460" y="92" text-anchor="middle" font-size="8" fill="#ea580c" font-family="IBM Plex Mono, monospace">Acc · F1 · CM</text>
+
+                                                <!-- Node 5: Register Model -->
+                                                <rect x="540" y="46" width="100" height="64" rx="10" fill="#f0fdf4" stroke="#86efac" stroke-width="1.5"/>
+                                                <text x="590" y="75" text-anchor="middle" font-size="10.5" font-weight="600" fill="#1e1b4b" font-family="Space Grotesk, sans-serif">Register Model</text>
+                                                <text x="590" y="92" text-anchor="middle" font-size="8" fill="#16a34a" font-family="IBM Plex Mono, monospace">Model Registry</text>
+
+                                                <!-- Node 6: Deploy Model -->
+                                                <rect x="670" y="46" width="100" height="64" rx="10" fill="#f0fdf4" stroke="#86efac" stroke-width="1.5"/>
+                                                <text x="720" y="75" text-anchor="middle" font-size="10.5" font-weight="600" fill="#1e1b4b" font-family="Space Grotesk, sans-serif">Deploy Model</text>
+                                                <text x="720" y="92" text-anchor="middle" font-size="8" fill="#16a34a" font-family="IBM Plex Mono, monospace">Vertex Endpoint</text>
+
+                                                <!-- Legend -->
+                                                <rect x="20" y="126" width="10" height="10" rx="2" fill="#eef2ff" stroke="#a5b4fc" stroke-width="1"/>
+                                                <text x="36" y="135" font-size="8" fill="#5a6377" font-family="IBM Plex Mono, monospace">Data Layer</text>
+                                                <rect x="130" y="126" width="10" height="10" rx="2" fill="#fff4f0" stroke="#fdba74" stroke-width="1"/>
+                                                <text x="146" y="135" font-size="8" fill="#5a6377" font-family="IBM Plex Mono, monospace">Model Layer</text>
+                                                <rect x="240" y="126" width="10" height="10" rx="2" fill="#f0fdf4" stroke="#86efac" stroke-width="1"/>
+                                                <text x="256" y="135" font-size="8" fill="#5a6377" font-family="IBM Plex Mono, monospace">Deploy Layer</text>
+                                                <line x1="360" y1="131" x2="385" y2="131" stroke="#ffb347" stroke-width="1.5" stroke-dasharray="4 2" marker-end="url(#arr-cond)"/>
+                                                <text x="392" y="135" font-size="8" fill="#5a6377" font-family="IBM Plex Mono, monospace">Conditional (KFP Condition)</text>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </article>
                     </div>
                 </div>

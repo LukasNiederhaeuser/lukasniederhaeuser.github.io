@@ -94,3 +94,25 @@ const revealObserver = new IntersectionObserver(
 );
 
 revealElements.forEach((el) => revealObserver.observe(el));
+
+// Project card expand/collapse
+document.querySelectorAll('.project-card--expandable').forEach((card) => {
+	const toggle = card.querySelector('.project-card__toggle');
+	const detailId = toggle?.getAttribute('aria-controls');
+	const detail = detailId ? document.getElementById(detailId) : null;
+	if (!toggle || !detail) return;
+
+	const expand = () => {
+		const isOpen = toggle.getAttribute('aria-expanded') === 'true';
+		toggle.setAttribute('aria-expanded', String(!isOpen));
+		detail.classList.toggle('is-open', !isOpen);
+	};
+
+	card.addEventListener('click', expand);
+
+	// Prevent double-toggle when clicking the button itself
+	toggle.addEventListener('click', (e) => {
+		e.stopPropagation();
+		expand();
+	});
+});
