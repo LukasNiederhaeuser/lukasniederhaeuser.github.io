@@ -736,4 +736,34 @@ a {
   .contact__form {
     padding: 1.5rem;
   }
+
+  .project-card {
+    padding: 1.25rem;
+    border-radius: 1rem;
+  }
+
+  .project-card__toggle {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.85rem;
+  }
+
+  .project-detail__body {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    gap: 1.25rem;
+  }
+
+  .project-detail__text p {
+    font-size: 0.875rem;
+  }
+
+  .project-detail__tags li {
+    font-size: 0.72rem;
+    padding: 0.25rem 0.65rem;
+  }
+
+  .pipeline-diagram-wrapper {
+    padding: 0.5rem;
+    border-radius: 0.75rem;
+  }
 }
