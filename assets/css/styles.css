@@ -477,6 +477,8 @@ a {
   overflow: hidden;
   max-height: 0;
   transition: max-height 0.5s ease;
+  width: 100%;
+  min-width: 0;
 }
 
 .project-card__detail.is-open {
@@ -490,6 +492,16 @@ a {
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
+  width: 100%;
+  min-width: 0;
+}
+
+.project-detail__text,
+.project-detail__diagram {
+  min-width: 0;
+  width: 100%;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .project-detail__text h4,
@@ -543,6 +555,7 @@ a {
   border: 1px solid var(--border-color);
   padding: 0.75rem;
   -webkit-overflow-scrolling: touch;
+  width: 100%;
   max-width: 100%;
   box-sizing: border-box;
 }
