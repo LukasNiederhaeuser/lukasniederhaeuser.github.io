@@ -387,7 +387,6 @@ a {
   gap: 1rem;
   position: relative;
   min-width: 0;
-  overflow-x: hidden;
 }
 
 .project-card::after {
@@ -482,6 +481,7 @@ a {
 
 .project-card__detail.is-open {
   max-height: 3000px;
+  overflow: visible;
 }
 
 .project-detail__body {
@@ -753,10 +753,6 @@ a {
     margin-top: 1rem;
     padding-top: 1rem;
     gap: 1.25rem;
-  }
-
-  .project-detail__text p {
-    font-size: 0.875rem;
   }
 
   .project-detail__tags li {
