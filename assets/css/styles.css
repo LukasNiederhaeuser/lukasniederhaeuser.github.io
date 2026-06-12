@@ -386,6 +386,8 @@ a {
   flex-direction: column;
   gap: 1rem;
   position: relative;
+  min-width: 0;
+  overflow-x: hidden;
 }
 
 .project-card::after {
@@ -765,5 +767,9 @@ a {
   .pipeline-diagram-wrapper {
     padding: 0.5rem;
     border-radius: 0.75rem;
+  }
+
+  .pipeline-diagram-wrapper svg {
+    min-width: 480px;
   }
 }
