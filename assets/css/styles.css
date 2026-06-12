@@ -481,7 +481,6 @@ a {
 
 .project-card__detail.is-open {
   max-height: 3000px;
-  overflow: visible;
 }
 
 .project-detail__body {
@@ -499,6 +498,7 @@ a {
   font-weight: 600;
   margin-bottom: 0.75rem;
   color: var(--text-color);
+  overflow-wrap: break-word;
 }
 
 .project-detail__text p {
@@ -506,6 +506,7 @@ a {
   margin-bottom: 1rem;
   line-height: 1.75;
   font-size: 0.95rem;
+  overflow-wrap: break-word;
 }
 
 .project-detail__text p:last-of-type {
@@ -542,6 +543,8 @@ a {
   border: 1px solid var(--border-color);
   padding: 0.75rem;
   -webkit-overflow-scrolling: touch;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .pipeline-diagram-wrapper svg {
